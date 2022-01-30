@@ -8,5 +8,7 @@ public class Node {
 	public Node(int i) {
 		value = i;
 	}
-	
+
 }
+// Komentarz do zadania 'błędy formatowania i konwencji':
+// Kombinacje klawiszy alt + kursor prawo / lewo w Eclipse pozwala na przełączanie między kolejnymi otwartymi plikami 

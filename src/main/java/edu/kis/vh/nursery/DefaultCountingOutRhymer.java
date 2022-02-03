@@ -2,6 +2,8 @@ package edu.kis.vh.nursery;
 
 public class DefaultCountingOutRhymer {
 
+	public static final int TOTAL_FULL = 11;
+
 	public static final int TOTAL_INIT = -1;
 
 	private static final int ARRAY_SIZE = 12;
@@ -20,7 +22,7 @@ public class DefaultCountingOutRhymer {
 	}
 
 	public boolean isFull() {
-		return total == 11;
+		return total == TOTAL_FULL;
 	}
 
 	protected int peekaboo() {

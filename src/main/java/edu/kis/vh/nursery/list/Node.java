@@ -2,13 +2,33 @@ package edu.kis.vh.nursery.list;
 
 public class Node {
 
-	public int value;
-	public Node prev, next;
+	private int value;
+	private Node prev;
+	private Node next;
 
-	public Node(int i) {
+	protected Node(int i) {
 		value = i;
 	}
 
+	protected int getValue() {
+		return value;
+	}
+
+	protected Node getPrev() {
+		return prev;
+	}
+
+	protected void setPrev(Node prev) {
+		this.prev = prev;
+	}
+
+	protected Node getNext() {
+		return next;
+	}
+
+	protected void setNext(Node next) {
+		this.next = next;
+	}
 }
 // Komentarz do zadania 'błędy formatowania i konwencji':
 // Kombinacje klawiszy alt + kursor prawo / lewo w Eclipse pozwala na przełączanie między kolejnymi otwartymi plikami 

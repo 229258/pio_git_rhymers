@@ -4,9 +4,11 @@ public class IntLinkedList {
 
 	private static final int VALUE_FOR_EMPTY_LIST = -1;
 	private Node last;
+
+	// TODO: Field i is not used. Can be removed.
 	private int i;
 
-	private void push(int i) {
+	protected void push(int i) {
 		if (last == null)
 			last = new Node(i);
 		else {
@@ -16,21 +18,22 @@ public class IntLinkedList {
 		}
 	}
 
-	private boolean isEmpty() {
+	protected boolean isEmpty() {
 		return last == null;
 	}
 
-	private boolean isFull() {
+	// TODO: Method always returns false. Missing implementation?
+	protected boolean isFull() {
 		return false;
 	}
 
-	private int top() {
+	protected int top() {
 		if (isEmpty())
 			return VALUE_FOR_EMPTY_LIST;
 		return last.getValue();
 	}
 
-	private int pop() {
+	protected int pop() {
 		if (isEmpty())
 			return VALUE_FOR_EMPTY_LIST;
 		int ret = last.getValue();
@@ -45,4 +48,37 @@ public class IntLinkedList {
 	int getI() {
 		return i;
 	}
+
+	private static class Node {
+
+		private int value;
+		private Node prev;
+		private Node next;
+
+		protected Node(int i) {
+			value = i;
+		}
+
+		protected int getValue() {
+			return value;
+		}
+
+		protected Node getPrev() {
+			return prev;
+		}
+
+		protected void setPrev(Node prev) {
+			this.prev = prev;
+		}
+
+		protected Node getNext() {
+			return next;
+		}
+
+		protected void setNext(Node next) {
+			this.next = next;
+		}
+	}
+// Komentarz do zadania 'błędy formatowania i konwencji':
+// Kombinacje klawiszy alt + kursor prawo / lewo w Eclipse pozwala na przełączanie między kolejnymi otwartymi plikami 
 }

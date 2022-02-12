@@ -2,39 +2,83 @@ package edu.kis.vh.nursery.list;
 
 public class IntLinkedList {
 
-	Node last;
-	int i;
+	private static final int VALUE_FOR_EMPTY_LIST = -1;
+	private Node last;
 
-	public void push(int i) {
+	// TODO: Field i is not used. Can be removed.
+	private int i;
+
+	protected void push(int i) {
 		if (last == null)
 			last = new Node(i);
 		else {
-			last.next = new Node(i);
-			last.next.prev = last;
-			last = last.next;
+			last.setNext(new Node(i));
+			last.getNext().setPrev(last);
+			last = last.getNext();
 		}
 	}
 
-	public boolean isEmpty() {
+	protected boolean isEmpty() {
 		return last == null;
 	}
 
-	public boolean isFull() {
+	// TODO: Method always returns false. Missing implementation?
+	protected boolean isFull() {
 		return false;
 	}
 
-	public int top() {
+	protected int top() {
 		if (isEmpty())
-			return -1;
-		return last.value;
+			return VALUE_FOR_EMPTY_LIST;
+		return last.getValue();
 	}
 
-	public int pop() {
+	protected int pop() {
 		if (isEmpty())
-			return -1;
-		int ret = last.value;
-		last = last.prev;
+			return VALUE_FOR_EMPTY_LIST;
+		int ret = last.getValue();
+		last = last.getPrev();
 		return ret;
 	}
 
+	Node getLast() {
+		return last;
+	}
+
+	int getI() {
+		return i;
+	}
+
+	private static class Node {
+
+		private int value;
+		private Node prev;
+		private Node next;
+
+		protected Node(int i) {
+			value = i;
+		}
+
+		protected int getValue() {
+			return value;
+		}
+
+		protected Node getPrev() {
+			return prev;
+		}
+
+		protected void setPrev(Node prev) {
+			this.prev = prev;
+		}
+
+		protected Node getNext() {
+			return next;
+		}
+
+		protected void setNext(Node next) {
+			this.next = next;
+		}
+	}
+// Komentarz do zadania 'błędy formatowania i konwencji':
+// Kombinacje klawiszy alt + kursor prawo / lewo w Eclipse pozwala na przełączanie między kolejnymi otwartymi plikami 
 }

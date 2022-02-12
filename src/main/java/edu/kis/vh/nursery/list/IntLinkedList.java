@@ -4,6 +4,8 @@ public class IntLinkedList {
 
 	private static final int VALUE_FOR_EMPTY_LIST = -1;
 	private Node last;
+
+	// TODO: Field i is not used. Can be removed.
 	private int i;
 
 	protected void push(int i) {
@@ -20,6 +22,7 @@ public class IntLinkedList {
 		return last == null;
 	}
 
+	// TODO: Method always returns false. Missing implementation?
 	protected boolean isFull() {
 		return false;
 	}

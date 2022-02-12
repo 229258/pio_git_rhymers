@@ -26,6 +26,9 @@ public class DefaultRhymersFactory implements RhymersFactory {
 		return new DefaultCountingOutRhymer();
 	}
 
+	// TODO: Method getFalseRhymer has the same functionality as getStandardRhymer.
+	// Redundancy.
+
 	/**
 	 * Creates a DefaultCountingOutRhymer object
 	 *
